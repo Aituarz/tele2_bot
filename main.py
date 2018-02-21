@@ -35,32 +35,6 @@ if __name__ == "__main__":
     # Set up the Updater
     updater = Updater(TOKEN)
     dp = updater.dispatcher
-    # Add handlers
-    conv_handler = ConversationHandler(
-        entry_points=[CommandHandler('start', start)],
-
-        states={
-            CHOOSING_HOME_TEAM: [MessageHandler(Filters.text,
-                                          team_home,
-                                          pass_user_data=True),
-                           ],
-
-            CHOOSING_AWAY_TEAM: [MessageHandler(Filters.text,
-                                           team_away,
-                                           pass_user_data=True),
-                            ],
-            FINAL: [MessageHandler(Filters.text,
-                                           final_message,
-                                           pass_user_data=True),
-                            ],
-		
-        },
-
-        fallbacks=[RegexHandler('^Done$', done, pass_user_data=True)]
-    )
-
-    dp.add_handler(conv_handler)
-    #dp.add_handler(error)
 
     # Start the webhook
     updater.start_webhook(listen="0.0.0.0",
