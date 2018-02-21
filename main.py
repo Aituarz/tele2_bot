@@ -13,7 +13,10 @@ NAME = "tele2_bot"
 def repeat_all_messages(message):
     bot.send_message(message.chat.id, message.text)
 
-if __name__ == '__main__':
-     bot.polling(none_stop=True)
+updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook("https://{}.herokuapp.com/{}".format(NAME, TOKEN))
+    updater.idle()
 
 
