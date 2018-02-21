@@ -4,6 +4,10 @@ from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
 
+def start(bot, update):
+		update.message.reply_text(
+        	'Hello {}'.format(update.message.from_user.first_name))
+
 def help(bot, update):
     update.message.reply_text("HEEELP")
 
