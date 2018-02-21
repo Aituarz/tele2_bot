@@ -8,16 +8,6 @@ def start(bot, update):
 		update.message.reply_text(
         	'Hello {}'.format(update.message.from_user.first_name))
 
-def help(bot, update):
-    update.message.reply_text("HEEELP")
-
-def hello(bot, update):
-		update.message.reply_text(
-        	'Hello {}'.format(update.message.from_user.first_name))
-
-
-
-
     
 if __name__ == "__main__":
     # Set these variable to the appropriate values
