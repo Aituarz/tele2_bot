@@ -3,10 +3,23 @@ import logging
 from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
+button_list = [
+    InlineKeyboardButton("col1", callback_data=...),
+    InlineKeyboardButton("col2", callback_data=...),
+    InlineKeyboardButton("row 2", callback_data=...)
+]
+reply_markup = InlineKeyboardMarkup(util.build_menu(button_list, n_cols=2))
+bot.send_message(..., "A two-column menu", reply_markup=reply_markup)
+
 
 def start(bot, update):
-		update.message.reply_text(
-        	'Hello {}'.format(update.message.from_user.first_name))
+	try:
+		reply_keyboard = button_list
+		markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True, resize_keyboard=False)
+		update.message.reply_text("Choose your destiny!",reply_markup=markup)
+
+	except:
+		update.message.reply_text("Please try again from /start")
 
     
 if __name__ == "__main__":
