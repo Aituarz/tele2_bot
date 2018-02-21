@@ -8,7 +8,7 @@ CHOOSING_HOME_TEAM, CHOOSING_AWAY_TEAM, FINAL = range(3)
 
 def hello(bot, update):
 		update.message.reply_text(
-        		'Hello {}'.format(update.message.from_user.first_name))
+        	'Hello {}'.format(update.message.from_user.first_name))
 
 
 
