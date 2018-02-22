@@ -5,7 +5,7 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
                           ConversationHandler)
 
 def start(bot, update):
-	update.message.reply_text("Hi!",reply_markup=markup)
+	update.message.reply_text("Hi!")
 	#try:
 		#markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True, resize_keyboard=False)
 		
@@ -30,6 +30,7 @@ if __name__ == "__main__":
     # Set up the Updater
     updater = Updater(TOKEN)
     dp = updater.dispatcher
+    dp.add_handler(MessageHandler(Filters.text, start))
 
     # Start the webhook
     updater.start_webhook(listen="0.0.0.0",
