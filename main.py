@@ -5,9 +5,10 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
                           ConversationHandler)
 
 def start(bot, update):
-	try:
+	update.message.reply_text("Hi!",reply_markup=markup)
+	#try:
 		#markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True, resize_keyboard=False)
-		update.message.reply_text("Hi!",reply_markup=markup)
+		
 
 	#except:
 		#update.message.reply_text("Please try again from /start")
