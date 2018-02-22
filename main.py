@@ -17,7 +17,7 @@ def start(bot, update):
 if __name__ == "__main__":
     # Set these variable to the appropriate values
     TOKEN = "533314669:AAF_L5ViVpyyEsdy0DKK1SshUwHUQ3bQPi8"
-    NAME = "tele2-bot"
+    NAME = "tele2-ran"
 
     # Port is given by Heroku
     PORT = int(os.environ.get('PORT'))
