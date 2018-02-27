@@ -1,24 +1,35 @@
 import os
 import logging
-from telegram import ReplyKeyboardMarkup
+from telegram import ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
 
 def start(bot, update):
-    update.message.reply_text(
-        "Hello!"
-        " Please select menu:")
+    keyboard = [[InlineKeyboardButton("Option 1", callback_data='1'),
+                 InlineKeyboardButton("Option 2", callback_data='2')],
 
-def menu(message):
-  markup = types.ReplyKeyboardMarkup(True, False)
-  button1 = types.KeyBoardButton('Info')
-  button2 = types.KeyBoardButton('Request')
-  markup.add(button1, button2)
-  
-def info(info):
-  update.message,reply_text(
-      "ForeCast v.1.0",
-      reply_markup=markup)
+                [InlineKeyboardButton("Option 3", callback_data='3')]]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    update.message.reply_text('Please choose:', reply_markup=reply_markup)
+
+
+def button(bot, update):
+    query = update.callback_query
+
+    bot.edit_message_text(text="Selected option: {}".format(query.data),
+                          chat_id=query.message.chat_id,
+                          message_id=query.message.message_id)
+
+
+def help(bot, update):
+    update.message.reply_text("Use /start to test this bot.")
+
+
+def error(bot, update, error):
+    """Log Errors caused by Updates."""
+    logger.warning('Update "%s" caused error "%s"', update, error)
 
   
 if __name__ == "__main__":
