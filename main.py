@@ -6,7 +6,7 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
 
 def start(bot, update):
     update.message.reply_text(
-        "Hello!"
+        "Hello!",
         "Please select menu:")
 
 def menu(message):
