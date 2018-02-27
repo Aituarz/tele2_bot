@@ -4,7 +4,7 @@ from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
 
-def repeat_all_messages(message):
+def start(message):
     bot.send_message(message.chat.id, message.text)
 
 
