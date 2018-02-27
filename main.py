@@ -4,7 +4,12 @@ from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
 
-def start(message):
+def start(bot, update):
+    update.message.reply_text(
+        "Hello!"
+        "Please select menu:")
+
+def menu(message):
   markup = types.ReplyKeyboardMarkup(True, False)
   button1 = types.KeyBoardButton('Info')
   button2 = types.KeyBoardButton('Request')
