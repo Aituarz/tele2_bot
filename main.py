@@ -5,10 +5,23 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
                           ConversationHandler)
 
 def start(message):
-    bot.send_message(message.chat.id, message.text)
+  markup = types.ReplyKeyboardMarkup(True, False)
+  button1 = types.KeyBoardButton('Info')
+  button2 = types.KeyBoardButton('Request')
+  markup.add(button1, button2)
+  
+def info(info):
+  update.message,reply_text(
+      "ForeCast v.1.0",
+      reply_markup=markup)
 
-
-    
+def request(message):
+  markup = types.ReplyKeyboardMarkup(True, False)
+  button1 = types.KeyBoardButton('Call')
+  button2 = types.KeyBoardButton('Internet')
+  markup.add(button1, button2)
+ 
+  
 if __name__ == "__main__":
     # Set these variable to the appropriate values
     TOKEN = "533314669:AAF_L5ViVpyyEsdy0DKK1SshUwHUQ3bQPi8"
@@ -33,5 +46,3 @@ if __name__ == "__main__":
                           url_path=TOKEN)
     updater.bot.setWebhook("https://{}.herokuapp.com/{}".format(NAME, TOKEN))
     updater.idle()
-
-
