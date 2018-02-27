@@ -5,11 +5,22 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
                           ConversationHandler)
 
 def start(bot, update):
-    bot.send_message(chat_id=update.message.chat_id, text="Hi! I'm a Tele2 Kazakhstan bot, please choose menu")
-
-def hello(bot, update):
     update.message.reply_text(
-        'Hello {}'.format(update.message.from_user.first_name))
+        "Hello!"
+        "Please select menu:",
+        reply_markup=markup)
+    
+def main_menu(message):
+  markup = types.ReplyKeyboardMarkup(True, False)
+  button1 = types.KeyBoardButton('Info')
+  button2 = types.KeyBoardButton('Request')
+  markup.add(button1, button2)
+  
+def info(info):
+  update.message,reply_text(
+      "ForeCast v.1.0",
+      reply_markup=markup)
+
 
     
 if __name__ == "__main__":
