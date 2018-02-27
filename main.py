@@ -4,22 +4,8 @@ from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
 
-def start(bot, update):
-    update.message.reply_text(
-        "Hello!"
-        "Please select menu:",
-        reply_markup=markup)
-    
-def main_menu(message):
-  markup = types.ReplyKeyboardMarkup(True, False)
-  button1 = types.KeyBoardButton('Info')
-  button2 = types.KeyBoardButton('Request')
-  markup.add(button1, button2)
-  
-def info(info):
-  update.message,reply_text(
-      "ForeCast v.1.0",
-      reply_markup=markup)
+def repeat_all_messages(message):
+    bot.send_message(message.chat.id, message.text)
 
 
     
