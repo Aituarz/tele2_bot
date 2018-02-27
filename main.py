@@ -15,12 +15,6 @@ def info(info):
       "ForeCast v.1.0",
       reply_markup=markup)
 
-def request(message):
-  markup = types.ReplyKeyboardMarkup(True, False)
-  button1 = types.KeyBoardButton('Call')
-  button2 = types.KeyBoardButton('Internet')
-  markup.add(button1, button2)
- 
   
 if __name__ == "__main__":
     # Set these variable to the appropriate values
