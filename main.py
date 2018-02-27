@@ -5,14 +5,12 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
                           ConversationHandler)
 
 def start(bot, update):
-    keyboard = [[InlineKeyboardButton("Option 1", callback_data='1'),
-                 InlineKeyboardButton("Option 2", callback_data='2')],
-
-                [InlineKeyboardButton("Option 3", callback_data='3')]]
+    keyboard = [[InlineKeyboardButton("Option 1", callback_data='Voice'),
+                 InlineKeyboardButton("Option 2", callback_data='Internet')],
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Please choose:', reply_markup=reply_markup)
+    update.message.reply_text('Please choose your problem:', reply_markup=reply_markup)
 
 
 def button(bot, update):
