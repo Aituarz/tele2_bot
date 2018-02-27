@@ -4,6 +4,9 @@ from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
 
+def start(bot, update):
+    bot.send_message(chat_id=update.message.chat_id, text="Hi! I'm a Tele2 Kazakhstan bot, please choose menu")
+
 def hello(bot, update):
     update.message.reply_text(
         'Hello {}'.format(update.message.from_user.first_name))
