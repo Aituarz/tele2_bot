@@ -4,14 +4,9 @@ from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
 
-def start(bot, update):
-	update.message.reply_text("Hi!")
-	#try:
-		#markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True, resize_keyboard=False)
-		
-
-	#except:
-		#update.message.reply_text("Please try again from /start")
+def hello(bot, update):
+    update.message.reply_text(
+        'Hello {}'.format(update.message.from_user.first_name))
 
     
 if __name__ == "__main__":
