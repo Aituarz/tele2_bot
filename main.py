@@ -10,6 +10,7 @@ def start(bot, update):
 	try:
     keyboard = [[InlineKeyboardButton("Voice", callback_data='1'),
                  InlineKeyboardButton("Internet", callback_data='2')]]
+
     update.message.reply_text('Please choose your problem:', reply_markup=reply_markup)
 		return FINAL
 	except:
@@ -18,8 +19,9 @@ def start(bot, update):
   
 def voice(bot, update):
 	try:
-    keyboard = [[InlineKeyboardButton("2G", callback_data='1'),
-                 InlineKeyboardButton("3G", callback_data='2')]]
+    keyboard = [[InlineKeyboardButton("2G", callback_data='3'),
+                 InlineKeyboardButton("3G", callback_data='4')]]
+
     update.message.reply_text('Please choose your technology:', reply_markup=reply_markup)
 		return FINAL
 	except:
@@ -28,8 +30,9 @@ def voice(bot, update):
   
 def internet(bot, update):
 	try:
-    keyboard = [[InlineKeyboardButton("2G", callback_data='1'),
-                 InlineKeyboardButton("3G LTE", callback_data='2')]]
+    keyboard = [[InlineKeyboardButton("2G", callback_data='5'),
+                 InlineKeyboardButton("3G LTE", callback_data='6')]]
+
     update.message.reply_text('Please choose your technology:', reply_markup=reply_markup)
 		return FINAL
 	except:
