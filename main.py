@@ -5,7 +5,6 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
                           ConversationHandler)
 
 def start(bot, update):
-	try:
     keyboard = [[InlineKeyboardButton("Voice", callback_data='1'),
                  InlineKeyboardButton("Internet", callback_data='2')]]
 
