@@ -10,7 +10,7 @@ def start(bot, update):
                  InlineKeyboardButton("Internet", callback_data='2')]]
 
     update.message.reply_text('Please choose your problem:', reply_markup=reply_markup)
-		return FINAL
+	
  
 if __name__ == "__main__":
     # Set these variable to the appropriate values
